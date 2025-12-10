@@ -1,12 +1,11 @@
-public class Ashe extends Champion implements  RangedChampion, PhysicsChampion{
-    public Ashe(String name, int level, int hp, int attackDamage, int defence) {
+public class Teemo extends Champion implements RangedChampion, MagicChampion{
+    public Teemo(String name, int level, int hp, int attackDamage, int defence) {
         super(name, level, hp, attackDamage, defence);
     }
 
     @Override
     public void useQ(Champion target) {
-        System.out.println(getName() + "의 Q!!");
-        target.takeDamage(getAttackDamage() + 30);
+
     }
 
     @Override
@@ -25,12 +24,12 @@ public class Ashe extends Champion implements  RangedChampion, PhysicsChampion{
     }
 
     @Override
-    public void kite() {
+    public void spellPower() {
 
     }
 
     @Override
-    public void attackPower() {
+    public void kite() {
 
     }
 }

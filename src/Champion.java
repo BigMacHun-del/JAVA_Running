@@ -50,7 +50,9 @@ public abstract class Champion {
     }
 
     public abstract void useQ(Champion target); //구현체마다 로직이 다르기 때문에 형식만 남김
-
+    public abstract void useW(Champion target);
+    public abstract void useE(Champion target);
+    public abstract void useR(Champion target);
     //에쉬 -> 챔피언, 가렌 -> 챔피언
     //챔피언 -> 챔피언 공격
 //    public void basicAttackToGaren(Garen target) {
@@ -67,7 +69,10 @@ public abstract class Champion {
     //레벨업 메서드
     public void levelUp(Champion champion) {
         this.level++;
-        System.out.println(this.name + " 레벨 증가 현재 레벨: " + this.level );
+        this.hp += 10;
+        this.attackDamage += 10;
+        System.out.println(this.name + " 레벨 증가!! 현재 레벨: " + this.level );
+        System.out.println("공격력, 체력 10 증가!! 현재 공격력, 체력: " + this.attackDamage + " / " + this.hp);
     }
 
 }

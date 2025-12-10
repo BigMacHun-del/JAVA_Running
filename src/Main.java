@@ -15,11 +15,14 @@ public class Main {
         //ashe.basicAttackToGaren(garen);
 
         Champion garen1 = new Garen("가렌1", 300, 400, rand.nextInt(500), 40);
-        Champion ashe1 = new Ashe("에쉬1", 300, 400, 200, 40);
+        Champion dummy = new Ashe("연습용 로봇", 1000000, 100000, 200, 40);
 
-        garen1.basicAttack(ashe1);
-        garen1.useQ(ashe1);
+        garen1.basicAttack(dummy);
+        garen1.useQ(dummy);
+        garen1.useW(dummy);
+        garen1.useE(dummy);
+        garen1.useR(dummy);
 
-        garen1.levelUp(garen);
+        garen1.levelUp(garen1);
     }
 }
