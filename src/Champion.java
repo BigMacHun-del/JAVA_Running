@@ -21,7 +21,16 @@ public abstract class Champion {
         this.hp -= actDamage;
 
         System.out.println(this.name + "이(가)" + actDamage + "만큼 피해를 받았습니다.");
-        System.out.println("남은 HP: " + this.hp);
+        if (hp <= 0) {
+            System.out.println("남은 HP: 0");
+        } else {
+            System.out.println("남은 HP: " + this.hp);
+        }
+
+        // 사망 로직
+        if(this.hp <= 0) {
+            System.out.println(this.name + "이(가) 체력이 0이되어 사망했습니다.");
+        }
     }
 
     public String getName() {
@@ -33,6 +42,10 @@ public abstract class Champion {
     }
 
     public int getAttackDamage(){
+        //난수로 300이상이 나오면 치명타 판정
+        if (attackDamage >= 300){
+            System.out.println("치명타 발생!!");
+        }
         return attackDamage;
     }
 
@@ -50,4 +63,11 @@ public abstract class Champion {
         System.out.println(getName() + "의 target = " + target.getName());
         target.takeDamage(getAttackDamage());
     }
+
+    //레벨업 메서드
+    public void levelUp(Champion champion) {
+        this.level++;
+        System.out.println(this.name + " 레벨 증가 현재 레벨: " + this.level );
+    }
+
 }

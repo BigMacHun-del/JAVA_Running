@@ -8,13 +8,14 @@ public class Garen extends Champion implements MeleeChampion {
 
     @Override
     public void useQ(Champion target) {
-        System.out.println(getName());
+        System.out.println(getName() + "의 Q!!");
         target.takeDamage(getAttackDamage() + 30);
-        System.out.println("가렌의 q");
     }
 
     @Override
     public void dash(Champion target) {
 
     }
+
+
 }
