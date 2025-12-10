@@ -1,5 +1,5 @@
 public class Ashe extends Champion implements  RangedChampion, PhysicsChampion{
-    public Ashe(String name, int level, int hp, int attackDamage, int defence) {
+    public Ashe(String name, int level, int hp, int attackDamage, int defence, boolean isdead) {
         super(name, level, hp, attackDamage, defence);
     }
 
