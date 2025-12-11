@@ -95,7 +95,7 @@ public abstract class Champion {
     }
 
     //레벨업 메서드
-    public void levelUp(Champion champion) {
+    public final void levelUp(Champion champion) {     //final이 붙으므로써 상속 불가
         this.level++;
         this.hp += 10;
         this.attackDamage += 10;

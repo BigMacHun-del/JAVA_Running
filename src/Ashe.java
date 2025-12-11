@@ -33,4 +33,5 @@ public class Ashe extends Champion implements  RangedChampion, PhysicsChampion{
     public void attackPower() {
 
     }
+
 }
