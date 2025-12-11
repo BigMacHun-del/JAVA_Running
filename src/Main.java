@@ -16,6 +16,7 @@ public class Main {
 
         Champion garen1 = new Garen("가렌1", 300, 400, rand.nextInt(500), 40 ,false);
         Champion dummy = new Ashe("연습용 로봇", 1000000, 2000, 200, 40,false);
+        System.out.println("총 생성된 챔피언의 수: " + garen1.getCreatedCount());
 
         garen1.basicAttack(dummy);
         garen1.useQ(dummy);
