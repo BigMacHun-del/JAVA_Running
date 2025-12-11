@@ -6,7 +6,7 @@ public abstract class Champion {
     private int defence;
     public boolean isDead;
 
-    private static int createdCount = 0;  //static으로 생성자가 챔피언을 생성할 때마다 카운트
+    private static int createdCount = 0;  //static 변수로 생성자가 챔피언을 생성할 때마다 카운트
 
     public Champion(String name, int level, int hp, int attackDamage, int defence) {
         this.name = name;
