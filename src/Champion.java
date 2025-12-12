@@ -5,6 +5,7 @@ public abstract class Champion {
     private int attackDamage;
     private int defence;
     public boolean isDead;
+    public static int battleCount = 0;
 
     public Champion(String name, int level, int hp, int attackDamage, int defence) {
         this.name = name;
@@ -52,6 +53,11 @@ public abstract class Champion {
         return hp;
     }
 
+    public int setHp(int hp) {
+        this.hp = hp;
+        return hp;
+    }
+
     public int setattackDamage(int attackDamage) {
         this.attackDamage = attackDamage;
         return attackDamage;
@@ -84,6 +90,7 @@ public abstract class Champion {
         }
         System.out.println(getName() + "의 target = " + target.getName());
         target.takeDamage(getAttackDamage());
+        battleCount++;
     }
 
     //레벨업 메서드
@@ -95,5 +102,13 @@ public abstract class Champion {
         System.out.println("공격력, 체력 10 증가!! 현재 공격력, 체력: " + this.attackDamage + " / " + this.hp);
     }
 
+    //부활 메서드(final로 선언하여 자식 클래스에서 오버라이드 불가)
+    public final void restrrect() {  //isDead를 이용하여 사망 여부 판단 후, 부활 기능 동작
+        if(isDead) {
+            System.out.println(this.name + "이 부활하였습니다.");
+            this.setHp(100);
+            this.isDead = false;
+        }
+    }
 
 }

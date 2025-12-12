@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
         Random rand = new Random();  //난수 생성
 
-        Garen garen = new Garen("가렌", 300, 400, 200, 40, false);
+        Garen garen = new Garen("가렌", 300, GameConstants.BASIC_HP, GameConstants.BASIC_ATTACK, GameConstants.BASIC_DEFENCE, false);
         Ashe ashe = new Ashe("에쉬", 300, 400, 200, 40, false);
         //garen.takeDamage(50);
 
@@ -14,7 +14,7 @@ public class Main {
         //System.out.println(ashe.getHp());
         //ashe.basicAttackToGaren(garen);
 
-        Champion garen1 = new Garen("가렌1", 300, 400, rand.nextInt(500), 40 ,false);
+        Champion garen1 = new Garen("가렌1", 300, GameConstants.BASIC_HP, GameConstants.BASIC_ATTACK, GameConstants.BASIC_DEFENCE,false);
         Champion dummy = new Ashe("연습용 로봇", 1000000, 2000, 200, 40,false);
 
         garen1.basicAttack(dummy);
@@ -24,5 +24,9 @@ public class Main {
         garen1.useR(dummy);   //남은 체력이 1000미만이면 처형
 
         garen1.levelUp(garen1);
+
+        dummy.restrrect();  //부활 메서드
+
+        System.out.println("총 전투 횟수: " + Champion.battleCount);
     }
 }
