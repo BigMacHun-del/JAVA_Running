@@ -24,5 +24,7 @@ public class Main {
         garen1.useR(dummy);   //남은 체력이 1000미만이면 처형
 
         garen1.levelUp(garen1);
+
+        System.out.println("총 전투 횟수: " + Champion.battleCount);
     }
 }

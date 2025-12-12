@@ -5,6 +5,7 @@ public abstract class Champion {
     private int attackDamage;
     private int defence;
     public boolean isDead;
+    public static int battleCount = 0;
 
     public Champion(String name, int level, int hp, int attackDamage, int defence) {
         this.name = name;
@@ -84,6 +85,7 @@ public abstract class Champion {
         }
         System.out.println(getName() + "의 target = " + target.getName());
         target.takeDamage(getAttackDamage());
+        battleCount++;
     }
 
     //레벨업 메서드

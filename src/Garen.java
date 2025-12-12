@@ -11,6 +11,7 @@ public class Garen extends Champion implements MeleeChampion,PhysicsChampion {
         }
         System.out.println(getName() + "의 Q!!");
         target.takeDamage(getAttackDamage() + 30);
+        Champion.battleCount++;
     }
 
     @Override
@@ -30,6 +31,7 @@ public class Garen extends Champion implements MeleeChampion,PhysicsChampion {
         for (int i = 0; i < 5; i++){
             target.takeDamage(getAttackDamage() - 20);
         }
+        Champion.battleCount++;
     }
 
     @Override
@@ -44,6 +46,7 @@ public class Garen extends Champion implements MeleeChampion,PhysicsChampion {
             execution(target);
         }
         target.takeDamage(getAttackDamage());
+        Champion.battleCount++;
     }
 
     @Override
