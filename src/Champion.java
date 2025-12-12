@@ -102,13 +102,24 @@ public abstract class Champion {
         System.out.println("공격력, 체력 10 증가!! 현재 공격력, 체력: " + this.attackDamage + " / " + this.hp);
     }
 
+
+    public abstract boolean cantRestrrect();  //부활 조건 미달시 부활할 수 없게 정보 가져오기
+    public void afterRestrrect(){};   //부활 횟수를 조건을 하는 챔피언만 사용하도록 abstract 뻄
+
     //부활 메서드(final로 선언하여 자식 클래스에서 오버라이드 불가)
     public final void restrrect() {  //isDead를 이용하여 사망 여부 판단 후, 부활 기능 동작
-        if(isDead) {
-            System.out.println(this.name + "이 부활하였습니다.");
-            this.setHp(100);
-            this.isDead = false;
+        if(!isDead) {
+            System.out.println(name + "은 살아있습니다.");
+            return;
         }
+        if(cantRestrrect()){
+            System.out.println("부활할 수 없습니다.");
+        }
+        System.out.println(this.name + "이 부활하였습니다.");
+        this.setHp(100);
+        this.isDead = false;
+
+        afterRestrrect(); // 부활 횟수를 사용하는 챔피언 한정 작동하게
     }
 
 }

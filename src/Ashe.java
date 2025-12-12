@@ -25,6 +25,11 @@ public class Ashe extends Champion implements  RangedChampion, PhysicsChampion{
     }
 
     @Override
+    public boolean cantRestrrect() {
+        return true;
+    }
+
+    @Override
     public void kite() {
 
     }

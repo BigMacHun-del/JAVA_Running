@@ -24,6 +24,11 @@ public class Lux extends Champion  implements RangedChampion,MagicChampion {
     }
 
     @Override
+    public boolean cantRestrrect() {
+        return false;
+    }
+
+    @Override
     public void spellPower() {
 
     }

@@ -15,7 +15,7 @@ public class Main {
         //ashe.basicAttackToGaren(garen);
 
         Champion garen1 = new Garen("가렌1", 300, GameConstants.BASIC_HP, GameConstants.BASIC_ATTACK, GameConstants.BASIC_DEFENCE,false);
-        Champion dummy = new Ashe("연습용 로봇", 1000000, 2000, 200, 40,false);
+        Champion dummy = new Garen("연습용 로봇", 1000000, 2000, 200, 40,false);
 
         garen1.basicAttack(dummy);
         garen1.useQ(dummy);
