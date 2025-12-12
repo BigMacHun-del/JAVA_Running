@@ -62,4 +62,5 @@ public class Garen extends Champion implements MeleeChampion,PhysicsChampion {
     public void execution(Champion target) {   //가렌의 특수 메서드 처형
         target.isDead = true;
     }
+
 }

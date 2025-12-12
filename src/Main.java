@@ -25,6 +25,8 @@ public class Main {
 
         garen1.levelUp(garen1);
 
+        dummy.restrrect();  //부활 메서드
+
         System.out.println("총 전투 횟수: " + Champion.battleCount);
     }
 }
