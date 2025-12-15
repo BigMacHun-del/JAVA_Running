@@ -113,4 +113,9 @@ public abstract class Champion {
         }
     }
 
+    @Override
+    public String toString() {
+        return this.name;
+    }
+
 }
