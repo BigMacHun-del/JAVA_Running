@@ -13,15 +13,16 @@ public class Battle {
 
         System.out.println("\n===== 1:1 전투 시작 =====");
         System.out.println(c1.getName() + " vs " + c2.getName());
-
+        System.out.println("========================");
         c1.basicAttack(c2);
         c2.basicAttack(c1);
 
         c1.useQ(c2);
         c2.useQ(c1);
+        System.out.println("========================");
     }
 
-    private static Champion randomPick(List<Champion> list) {
+    private static Champion randomPick(List<Champion> list) {  //리스트 중 랜덤으로 뽑기
         return list.get(random.nextInt(list.size()));
     }
 

@@ -57,30 +57,14 @@ public class Main {
         System.out.println("블루팀 전체 체력: " + blue.getTotalHp());
         System.out.println("레드팀 전체 체력: " + red.getTotalHp());
 
-        Battle.oneVsOne(red, blue);
+        // 팀 구성원 출력
+        System.out.println("===" + " 팀 구성원 ===");
+        Team.printTeamMembers(blue.getMembersName());
 
+        System.out.println("===" + " 팀 구성원 ===");
+        Team.printTeamMembers(red.getMembersName());
 
+        Battle.oneVsOne(red, blue);    //1대 1 랜덤 뽑기 대결
 
-        //자주 쓰는 리스트 반복문 응용
-        //1.
-        for (int i = 0; i<list.size(); i++) {list.get(i);}  //인덱스별 리스트 크기만큼 하나씩 접근
-        //2.
-        for (Champion champion1 : list) {}   // 챔피언 요소하나씩 접근
-
-        //Map<키 : 값>
-        Map<Integer, Champion> map = new HashMap<>();
-
-        map.put(1, garen1); //삽입
-        map.get(1);  //값 반환
-        boolean d = map.containsKey(1); // 키에 해당하는 값이 존재하는지
-        map.remove(1);  //삭제
-
-        Set<Integer> integers = map.keySet(); //키 값 전체 출력
-        Collection<Champion> collection = map.values();
-
-        //map 반복문 응용
-        for (Integer key : map.keySet()){  // 전체 키를 기준으로 키값 증가시키며 반복
-            Champion champ = map.get(key);
-        }
     }
 }
