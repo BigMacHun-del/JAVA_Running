@@ -13,17 +13,20 @@ public class Ashe extends Champion implements RangedChampion, PhysicsChampion {
 
     @Override
     public void useW(Champion target) {
-
+        System.out.println(getName() + "의 W!!");
+        target.takeDamage(getAttackDamage() + 50);
     }
 
     @Override
     public void useE(Champion target) {
-
+        System.out.println(getName() + "의 E!!");
+        target.takeDamage(getAttackDamage() + 30);
     }
 
     @Override
     public void useR(Champion target) {
-
+        System.out.println(getName() + "의 R!!");
+        target.takeDamage(getAttackDamage() + 100);
     }
 
     @Override

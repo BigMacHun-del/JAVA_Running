@@ -7,8 +7,15 @@ import java.util.List;
 
 public class Team<T extends Champion> {    //챔피언을 상속 받는 요소들만 올 수 있다. --> 상한 제한 적용
     private List<T> members = new ArrayList<>();
+    private String name;
 
-        public void add(T champion){   //매개변수 타입 제네릭
+    public Team() {}
+
+    public Team(String name) {
+        this.name = name;
+    }
+
+    public void add(T champion){   //매개변수 타입 제네릭
             members.add(champion);
         }
         public T get(int index){     //반환 타입 제네릭
@@ -25,5 +32,30 @@ public class Team<T extends Champion> {    //챔피언을 상속 받는 요소�
 
     public void printChampion2(List<? super Champion> list){  // 상위 와일드 카드, 요소 추가하기
         list.add(new Garen("가렌2", 300, GameConstants.BASIC_HP, GameConstants.BASIC_ATTACK, GameConstants.BASIC_DEFENCE,false));
+    }
+
+    public List<T> getMembers() {
+            return members;
+    }
+
+    public void addMember(T champion) {
+        members.add(champion);
+        System.out.println(champion.getName() + "이(가) " + name + " 팀에 합류!");
+    }
+
+    public int getTotalHp() {
+        return members.stream()
+                .mapToInt(Champion::getHp) //getHp 메서드를 통해 얻은 값을 int 로
+                .sum();  //int로 얻은 값 합산
+    }
+
+    public static void printTeamMembers(List<? extends Champion> team){   //제네릭 와일드카드 적용해보기
+            team.stream()
+                    .map(Champion::getName)     //이름만 뽑아내기
+                    .forEach(System.out::println);   //뽑아낸 데이터 각각 출력
+    }
+
+    public List<T> getMembersName() {    //팀원들의 이름 출력
+        return members;
     }
 }
