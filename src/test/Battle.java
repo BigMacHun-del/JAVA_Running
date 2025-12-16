@@ -25,6 +25,4 @@ public class Battle {
     private static Champion randomPick(List<Champion> list) {  //리스트 중 랜덤으로 뽑기
         return list.get(random.nextInt(list.size()));
     }
-
-
 }

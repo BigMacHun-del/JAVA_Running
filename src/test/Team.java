@@ -44,7 +44,9 @@ public class Team<T extends Champion> {    //챔피언을 상속 받는 요소�
     }
 
     public int getTotalHp() {
-        return members.stream().mapToInt(Champion::getHp).sum();
+        return members.stream()
+                .mapToInt(Champion::getHp) //getHp 메서드를 통해 얻은 값을 int 로
+                .sum();  //int로 얻은 값 합산
     }
 
     public static void printTeamMembers(List<? extends Champion> team){   //제네릭 와일드카드 적용해보기
